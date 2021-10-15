@@ -21,7 +21,7 @@ cask "unity-android_2020.3.19f1" do
 
   pkg "#{_package_name}-#{version.before_comma}.pkg"
 
-  depends_on cask: "#{version.before_comma}"
+  depends_on cask: "unity_#{version.before_comma}"
 
   postflight do
     if File.exist? '/Applications/Unity'
