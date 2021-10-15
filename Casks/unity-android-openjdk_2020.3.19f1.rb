@@ -7,11 +7,20 @@ cask "unity-android-openjdk_2020.3.19f1" do
   desc "OpenJDK specifically for use with Unity"
   homepage "https://unity.com/products"
 
+  _openjdk_path = "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/OpenJDK"
   installer script: {
-    executable: "/usr/bin/unzip",
-    args:       ["#{caskroom_path}/jdk8u172-b11_4be8440cc514099cfe1b50cbc74128f6955cd90fd5afe15ea7be60f832de67b4.zip", "-d", "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/OpenJDK"],
+    executable: "/bin/cp",
+    args:       ["-pr", "#{caskroom_path}/#{version}/", "#{_openjdk_path}"],
     sudo:       true,
   }
+
+  preflight do
+    system '/usr/bin/sudo', '-E', '--', 'mkdir', "#{_openjdk_path}"
+  end
+
+  postflight do
+    set_ownership("#{_openjdk_path}", user: 'root', group: 'wheel')
+  end
 
   depends_on cask: "unity-android_#{version.before_comma}"
 end
