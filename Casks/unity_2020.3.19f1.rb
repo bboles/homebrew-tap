@@ -19,7 +19,13 @@ cask "unity_2020.3.19f1" do
 
   pkg "Unity-#{version.before_comma}.pkg"
 
+  postflight do
+    if File.exist? '/Applications/Unity'
+      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{version.before_comma}"
+    end
+  end
+
   uninstall quit:    "com.unity3d.UnityEditor5.x",
             pkgutil: "com.unity3d.UnityEditor5.x",
-            delete:  "/Applications/Unity"
+            delete:  "/Applications/Unity-#{version.before_comma}"
 end
