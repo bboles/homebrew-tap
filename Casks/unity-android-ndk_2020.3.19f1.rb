@@ -3,8 +3,8 @@ cask "unity-android-ndk_2020.3.19f1" do
   sha256 "5851115c6fc4cce26bc320295b52da240665d7ff89bda2f5d5af1887582f5c48"
 
   url "https://dl.google.com/android/repository/android-ndk-r21d-darwin-x86_64.zip"
-  name "Android NDK Tools",
-  desc "Android NDK Tools for use specifically with Unity",
+  name "Android NDK Tools"
+  desc "Android NDK Tools for use specifically with Unity"
   homepage "https://unity.com/products"
 
   _ndk_path = "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/NDK"
