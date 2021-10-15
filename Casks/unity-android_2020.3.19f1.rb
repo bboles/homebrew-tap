@@ -4,7 +4,7 @@ cask "unity-android_2020.3.19f1" do
   version "2020.3.19f1,68f137dc9bbe"
   sha256 "839488ebc08446a096a893996ed23eac321ac166724cd8c5d9092057834d2d79"
 
-  url "https://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorInstaller/#{_package_name}-#{version.before_comma}.pkg",
+  url "https://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/#{_package_name}-#{version.before_comma}.pkg",
       verified: "download.unity3d.com/download_unity/"
   name "Android Build Support"
   desc "Allows building your Unity projects for the Android platform"
