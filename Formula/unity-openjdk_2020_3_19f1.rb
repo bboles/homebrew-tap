@@ -1,4 +1,4 @@
-class Unity-OpenJDK_2020_3_19f1 < Formula
+class UnityOpenJDK_2020_3_19f1 < Formula
   desc "OpenJDK for Unity"
   homepage "https://unity.com/products"
   url "http://download.unity3d.com/download_unity/open-jdk/open-jdk-mac-x64/jdk8u172-b11_4be8440cc514099cfe1b50cbc74128f6955cd90fd5afe15ea7be60f832de67b4.zip"
