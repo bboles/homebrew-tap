@@ -1,0 +1,35 @@
+cask "unity-android_2020.3.19f1" do
+  _package_name = 'UnitySetup-Android-Support-for-Editor'
+
+  version "2020.3.19f1,41c4e627c95f"
+  sha256 "ce8b769aea39c8e3b38afa2e484fccf8de8878c1925eeae96e60b9fa6422805e"
+
+  url "https://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorInstaller/#{_package_name}-#{version.before_comma}.pkg",
+      verified: "download.unity3d.com/download_unity/"
+  name "Android Build Support"
+  desc "Allows building your Unity projects for the Android platform"
+  homepage "https://unity.com/products"
+
+  livecheck do
+    url "https://public-cdn.cloud.unity3d.com/hub/prod/releases-darwin.json"
+    strategy :page_match do |page|
+      page.scan(%r{/download_unity/(\h+)/MacEditorInstaller/#{_package_name}-(\d+(?:\.\d+)*[a-z]*\d*)\.pkg}i).map do |match|
+        "#{match[1]},#{match[0]}"
+      end
+    end
+  end
+
+  pkg "#{_package_name}-#{version.before_comma}.pkg"
+
+  depends_on cask: "#{version.before_comma}"
+
+  postflight do
+    if File.exist? '/Applications/Unity'
+      FileUtils.move '/Applications/Unity', "/Applications/Unity.#{version.before_comma}"
+    end
+  end
+
+  uninstall quit:    "com.unity3d.UnityEditor5.x",
+            pkgutil: "com.unity3d.UnityEditor5.x",
+            delete:  "/Applications/Unity.#{version.before_comma}/PlaybackEngines/AndroidPlayer"
+end
