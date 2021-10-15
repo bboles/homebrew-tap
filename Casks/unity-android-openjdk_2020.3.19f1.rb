@@ -9,7 +9,7 @@ cask "unity-android-openjdk_2020.3.19f1" do
 
   installer script: {
     executable: "/usr/bin/unzip",
-    args:       ["#{staged_path}/jdk8u172-b11_4be8440cc514099cfe1b50cbc74128f6955cd90fd5afe15ea7be60f832de67b4.zip", "-d", "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/OpenJDK"],
+    args:       ["#{caskroom_path}/jdk8u172-b11_4be8440cc514099cfe1b50cbc74128f6955cd90fd5afe15ea7be60f832de67b4.zip", "-d", "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/OpenJDK"],
     sudo:       true,
   }
 
