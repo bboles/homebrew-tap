@@ -23,9 +23,23 @@ cask "unity-ios_2020.3.19f1" do
 
   depends_on cask: "unity_#{version.before_comma}"
 
+  preflight do
+    if File.exist? "/Applications/Unity"
+      FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+    end
+
+    if File.exist? "/Applications/Unity.#{version.before_comma}"
+      FileUtils.move "/Applications/Unity.#{version.before_comma}", '/Applications/Unity'
+    end
+  end
+
   postflight do
     if File.exist? '/Applications/Unity'
       FileUtils.move '/Applications/Unity', "/Applications/Unity.#{version.before_comma}"
+    end
+
+    if File.exist? '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
     end
   end
 
