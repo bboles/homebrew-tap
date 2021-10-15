@@ -1,4 +1,4 @@
-cask "unity-ios.3.19f1" do
+cask "unity-ios.2020.3.19f1" do
   _package_name = 'UnitySetup-iOS-Support-for-Editor'
 
   version "2020.3.19f1,68f137dc9bbe"
