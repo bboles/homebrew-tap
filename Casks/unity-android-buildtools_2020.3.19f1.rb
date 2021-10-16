@@ -16,7 +16,7 @@ cask "unity-android-buildtools_2020.3.19f1" do
   }
 
   preflight do
-    system '/usr/bin/sudo', '-E', '--', 'mkdir', "#{_buildtools_path}"
+    system '/usr/bin/sudo', '-E', '--', 'mkdir', '-p', "#{_buildtools_path}"
   end
 
   postflight do
