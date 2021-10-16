@@ -1,4 +1,4 @@
-cask "unity-android-sdkplatformtools_2020.3.19f1" do
+cask "unity-android-sdkplatforms_2020.3.19f1" do
   version "2020.3.19f1"
   sha256 "8452dbbf9668a428abb243c4f02a943b7aa83af3cca627629a15c4c09f28e7bd"
 
