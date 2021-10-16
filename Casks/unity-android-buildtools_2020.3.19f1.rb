@@ -23,5 +23,5 @@ cask "unity-android-buildtools_2020.3.19f1" do
     set_ownership("#{_buildtools_path}", user: 'root', group: 'wheel')
   end
 
-  depends_on cask: "unity-android-buildtools-sdk_#{version.before_comma}"
+  depends_on cask: "unity-android-sdkndktools_#{version.before_comma}"
 end
