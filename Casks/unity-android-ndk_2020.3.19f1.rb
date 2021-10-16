@@ -10,7 +10,7 @@ cask "unity-android-ndk_2020.3.19f1" do
   _ndk_path = "/Applications/Unity.#{version}/PlaybackEngines/AndroidPlayer/NDK"
   installer script: {
     executable: "/bin/cp",
-    args:       ["-pr", "#{caskroom_path}/#{version}/", "#{_ndk_path}"],
+    args:       ["-pr", "#{caskroom_path}/#{version}/android-ndk-r19/", "#{_ndk_path}"],
     sudo:       true,
   }
 
