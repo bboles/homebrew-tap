@@ -5,21 +5,21 @@
 class Glids < Formula
   desc "glids - GitLab ID Lister"
   homepage "https://github.com/bboles/glids"
-  version "0.2.5"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bboles/glids/releases/download/v0.2.5/glids_Darwin_x86_64.tar.gz"
-      sha256 "dc67347388dc5183d4c9bde0684f69f26baf7ca136ec94d271ef4a6ddd8174f8"
+      url "https://github.com/bboles/glids/releases/download/v0.3.0/glids_Darwin_x86_64.tar.gz"
+      sha256 "242ee5ecb413352068e5407a03d2a99fa426469b4b36bb77983a4737cc431467"
 
       def install
         bin.install "glids"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bboles/glids/releases/download/v0.2.5/glids_Darwin_arm64.tar.gz"
-      sha256 "67444bf33e041fd751232183147ca2cf565ad102db54ad661b473d9b65b50cc4"
+      url "https://github.com/bboles/glids/releases/download/v0.3.0/glids_Darwin_arm64.tar.gz"
+      sha256 "c6568ab86273889de47ec8268a2c10a6e7e46c6726b962f7a1b2b10cebd2fab3"
 
       def install
         bin.install "glids"
@@ -29,15 +29,15 @@ class Glids < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/bboles/glids/releases/download/v0.2.5/glids_Linux_x86_64.tar.gz"
-      sha256 "55b26b36efbf6a2eee9ddca39efe2391abea495685e5b009d2feec55ffb3d6e5"
+      url "https://github.com/bboles/glids/releases/download/v0.3.0/glids_Linux_x86_64.tar.gz"
+      sha256 "e774fb0f58f4bea655c5612f9f98ab7f0a289fc487257e6466cf6a6aa74842f0"
       def install
         bin.install "glids"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/bboles/glids/releases/download/v0.2.5/glids_Linux_arm64.tar.gz"
-      sha256 "97e7f2bdd1e7029f6d2b352246dc3c377c8839475cc35b75e5facfdf351035fe"
+      url "https://github.com/bboles/glids/releases/download/v0.3.0/glids_Linux_arm64.tar.gz"
+      sha256 "eaaf50369a5d7a77ac4e7bba734ea88057a765b6fef384ca3cbe760f2e33f045"
       def install
         bin.install "glids"
       end
